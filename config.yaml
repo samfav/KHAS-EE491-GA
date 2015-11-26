@@ -1,0 +1,18 @@
+#Genetic algorithm project configuration file
+# Be careful to put a comma + a space between each data...! (YAML convention)
+
+#################################################################################
+fitness_limit: 0.001
+population_path: './test.csv'
+
+#Algorithm constants
+mutation_rate: 0.1
+crossover_rate: 0.4
+
+#Selection strategy between
+selection_strategy: default
+default_initial: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45]
+
+#fitness function
+fitness_function: |
+    @(x, y)y-x
