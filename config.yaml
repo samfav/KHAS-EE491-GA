@@ -5,13 +5,21 @@
 fitness_limit: 0.001
 population_path: './test.csv'
 
+maximum_iteration: 500
+population_size: 50
+
+number_of_bits: 64
+
 #Algorithm constants
-mutation_rate: 0.1
-crossover_rate: 0.4
+#mutation is bit flip by default
+mutation_rate: 0.001
+
+crossover_rate: 0.6
+crossover_type: default
+
 
 #Selection strategy between
 selection_strategy: default
-default_initial: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45]
 
 #fitness function
 fitness_function: |
