@@ -19,7 +19,8 @@ end
 population_size = config.population_size
 number_of_bits = config.number_of_bits
 fitness_limit = config.fitness_limit
-maximu_iteration = config.maximum_iteration
+maximum_iteration = config.maximum_iteration
+number_of_parents = config.number_of_parents
 %mutation parameter
 mutation_rate = config.mutation_rate
 %crossover parameters
@@ -34,6 +35,7 @@ else
     fitness_function = str2func(config.fitness_function) 
 end
 
-if initial_population
-    class(initial_population)
+if size(initial_population, 1) ~= population_size | size(initial_population, 2) ~= number_of_bits
+    warning('initial population not valid replaced with random values')
+    initial_population = randi([0 1], population_size, number_of_bits)
 end

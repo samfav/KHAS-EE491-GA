@@ -7,6 +7,7 @@ population_path: './test.csv'
 
 maximum_iteration: 500
 population_size: 50
+number_of_parents: 20
 
 number_of_bits: 64
 
