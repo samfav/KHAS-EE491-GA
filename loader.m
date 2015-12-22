@@ -37,5 +37,5 @@ end
 
 if size(initial_population, 1) ~= population_size | size(initial_population, 2) ~= number_of_bits
     warning('initial population not valid replaced with random values')
-    initial_population = randi([0 1], population_size, number_of_bits)
+    initial_population = randi([0 1], population_size, number_of_bits);
 end

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Link to selection.m
+Type=Link
+URL=imap://petrosilius%40posteo%2Ede@posteo.de:143/fetch%3EUID%3E.INBOX%3E378?part=1.2&filename=selection.m
+Icon=text-html

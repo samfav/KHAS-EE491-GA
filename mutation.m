@@ -1,6 +1,6 @@
 function pop_out = mutation( pop_in, prob )
 
-    [x,Number_of_Individuals,Number_of_bits]=size(pop_in);    
+    [Number_of_Individuals,Number_of_bits,x]=size(pop_in);    
     Count_of_Rnd_Nrs=Number_of_Individuals*Number_of_bits;
     temp_in = reshape(pop_in,[1,Count_of_Rnd_Nrs]);
     sizArray = size(temp_in);
