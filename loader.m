@@ -27,6 +27,12 @@ mutation_rate = config.mutation_rate
 crossover_rate = config.crossover_rate
 crossover_type = config.crossover_type
 
+crossover_Parents_Elitism=config.crossover_Parents_Elitism
+crossover_Parents_selection_type=config.crossover_Parents_selection_type
+crossover_point=config.crossover_point
+
+max_min=config.max_min
+
 
 %load fitness function
 if isempty(config.fitness_function)

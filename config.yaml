@@ -13,14 +13,24 @@ number_of_bits: 64
 
 #Algorithm constants
 #mutation is bit flip by default
-mutation_rate: 0.01
+mutation_rate: 0.001
 
 crossover_rate: 0.6
 crossover_type: default
-
+#crossover_Parents_Elitism copies all the parents to the next gen 
+crossover_Parents_Elitism: 0
+#crossover_Parents_selection_type: 
+#    1=random selection of parents for crossover
+#    2=Roulette Wheel selection of parents for crossover
+crossover_Parents_selection_type: 2
+crossover_point: 32
 
 #Selection strategy between
 selection_strategy: default
+
+#max or min problem? max=1 min=2 
+#min not working, but it is necessary for the roulettewheelselection, as there are two different algorithms for min and max!
+max_min: 1
 
 #fitness function
 fitness_function: |
