@@ -15,9 +15,9 @@ offspring_index = parent_size+1;
 %=== CROSS-OVER to generate offsprings ====================================
 while offspring_index < pop_size
     %select two random parents
-    k = randperm(2); 
-    parent1 = parent_VEC(k(1),:);
-    parent2 = parent_VEC(k(2),:);   
+    i = randperm(2); 
+    parent1 = parent_VEC(i(1),:);
+    parent2 = parent_VEC(i(2),:);   
     %Generate two offsprings by one point cross over of the two parents
     parta1=parent1(1:k);  
     partb1=parent1(k+1:number_of_bits);  

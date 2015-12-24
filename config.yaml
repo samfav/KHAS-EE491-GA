@@ -13,7 +13,7 @@ number_of_bits: 64
 
 #Algorithm constants
 #mutation is bit flip by default
-mutation_rate: 0.001
+mutation_rate: 0.01
 
 crossover_rate: 0.6
 crossover_type: default
