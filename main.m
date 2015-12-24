@@ -10,7 +10,7 @@ overallfitness(index)=sum(fitness(:,1));
 
 while index < maximum_iteration %stop_condition, add test on fitness
     
-    parents = selection(1, population(:,:,index),number_of_parents,fitness(:,index));
+    parents = selection(2, population(:,:,index),number_of_parents,fitness(:,index));
     new_generation = reproduction(parents, crossover_type, 32, population_size); %todo crossover_rate
     new_generation_mutated = mutation(new_generation, mutation_rate);
     population( :, :,index+1) = new_generation_mutated;
