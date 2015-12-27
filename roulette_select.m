@@ -1,4 +1,7 @@
-function Selection= roulette_select( fitnessvalues, population , count, max_min)
+%Function roulette-wheel selection
+%inputs: fitnessvalues, population, count, max_min
+%outputs: roulette_select
+function selection= roulette_select( fitnessvalues, population , count, max_min)
 %UNTITLED4 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -21,7 +24,7 @@ function Selection= roulette_select( fitnessvalues, population , count, max_min)
            ii=ii+1;
            Sumation=Sumation+Percentages(ii);
         end  
-        Selection(jj,:)=population(ii,:);
+        selection(jj,:)=population(ii,:);
     end
 
 end
