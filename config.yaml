@@ -3,7 +3,7 @@
 
 #################################################################################
 fitness_limit: 0.001
-population_path: './test.csv'
+population_path: './initial_population.csv'
 
 maximum_iteration: 500
 population_size: 50
@@ -23,7 +23,6 @@ crossover_Parents_Elitism: 0
 #    1=random selection of parents for crossover
 #    2=Roulette Wheel selection of parents for crossover
 crossover_Parents_selection_type: 2
-crossover_point: 32
 
 #Selection strategy between
 selection_strategy: default
@@ -33,5 +32,4 @@ selection_strategy: default
 max_min: 1
 
 #fitness function
-fitness_function: |
-    @(x, y)y-x
+fitness_function: '@(x)x^2'

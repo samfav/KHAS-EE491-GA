@@ -29,7 +29,7 @@ crossover_type = config.crossover_type
 
 crossover_Parents_Elitism=config.crossover_Parents_Elitism
 crossover_Parents_selection_type=config.crossover_Parents_selection_type
-crossover_point=config.crossover_point
+%crossover_point=config.crossover_point
 
 max_min=config.max_min
 

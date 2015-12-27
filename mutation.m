@@ -1,13 +1,22 @@
-function pop_out = mutation( pop_in, prob )
+%Function mutation
+%inputs: pop_in=population before mutation, mutprob=mutation probability
+%outputs: pop_out=population after mutation
+function pop_out = mutation( pop_in, mutprob )
 
-    [Number_of_Individuals,Number_of_bits,x]=size(pop_in);    
-    Count_of_Rnd_Nrs=Number_of_Individuals*Number_of_bits;
-    temp_in = reshape(pop_in,[1,Count_of_Rnd_Nrs]);
-    sizArray = size(temp_in);
-    toChangeIdx = rand(sizArray) < prob;
-    temp_in(toChangeIdx) = 1-temp_in(toChangeIdx);
+    [number_of_individuals,number_of_bits]=size(pop_in);    
+    total_bits=number_of_individuals*number_of_bits;
     
-    pop_out=reshape(temp_in,[1,Number_of_Individuals,Number_of_bits]);
+    number_of_mutation_bits=round(total_bits*mutprob);
+    temp_in = reshape(pop_in,1,[]);
+    mutation_bit_index=randperm(total_bits);
+    mutation_bit_index=sort(mutation_bit_index(1:number_of_mutation_bits));
+    
+
+    
+    temp_in(mutation_bit_index)=1-temp_in(mutation_bit_index);
+    
+    
+    pop_out=reshape(temp_in,number_of_individuals,number_of_bits);
     
 end
 
