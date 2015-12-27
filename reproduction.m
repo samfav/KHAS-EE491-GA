@@ -38,9 +38,9 @@ while offspring_index < pop_size
             %Generate two offsprings by _one point cross over_ 
             k=round(number_of_bits*Crossover_rate);
             parta1=parent1(1:k);  
-            partb1=parent1(k+1:number_of_bits);  
+            partb1=parent1(k+1:end);  
             parta2=parent2(1:k);   
-            partb2=parent2(k+1:number_of_bits);  
+            partb2=parent2(k+1:end);  
             offspring1=[parta2 partb1];
             offspring2=[parta1 partb2];    
             new_generation(offspring_index,:)=offspring1;
@@ -54,7 +54,39 @@ while offspring_index < pop_size
                 break;
             end
         end
-        %Add twopointCrossover here  
+        
+        if Crossover_type == '2points'
+        %Add twopointCrossover here
+        %Two points cross-over (3 locus interchanges)
+        % m and n are the cross-over cut points generated randomly
+        cutpoints=randperm(number_of_bits);
+        cutpoints=sort(cutpoints(1:2));
+        m=cutpoints(1);
+        n=cutpoints(2);
+        partA1=parent1(1:m);
+        partA2=parent1(m+1:n);
+        partA3=parent1(n+1:end);
+        
+        partB1=parent2(1:m);
+        partB2=parent2(m+1:n);
+        partB3=parent2(n+1:end);
+        
+        offspring1=[partA1 partB2 partA3];
+        offspring2=[partB1 partA2 partB3];
+        
+        new_generation(offspring_index,:)=offspring1;
+            offspring_index=offspring_index+1;
+            if offspring_index>pop_size
+                break;
+            end
+            new_generation(offspring_index,:)=offspring2;
+            offspring_index=offspring_index+1;
+            if offspring_index>pop_size
+                break;
+            end
+            
+       end
+        
     else
         %Copy Parent as next offspring (without changing)
         new_generation(offspring_index,:)=parent1;
