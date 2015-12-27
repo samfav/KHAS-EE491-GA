@@ -34,8 +34,7 @@ while offspring_index < pop_size
     crossover_rnd=rand();
     if crossover_rnd<Crossover_rate 
         % Generate offsprings of two parents
-        switch Crossover_type 
-            case {'default','Default'}
+        if Crossover_type == 'default'
             %Generate two offsprings by _one point cross over_ 
             k=round(number_of_bits*Crossover_rate);
             parta1=parent1(1:k);  
@@ -54,9 +53,9 @@ while offspring_index < pop_size
             if offspring_index>pop_size
                 break;
             end
+        end
         
-        
-        case {'2points','2-points'}
+        if Crossover_type == '2points'
         %Add twopointCrossover here
         %Two points cross-over (3 locus interchanges)
         % m and n are the cross-over cut points generated randomly
@@ -86,14 +85,12 @@ while offspring_index < pop_size
                 break;
             end
             
-      
+       end
         
-       otherwise
+    else
         %Copy Parent as next offspring (without changing)
         new_generation(offspring_index,:)=parent1;
         offspring_index=offspring_index+1;
-        end 
-        
     end
 end
 
