@@ -3,8 +3,8 @@
 %Aim: To control how the genetic algorithm creates the next generation
 %--------------------------------------------------------------------------
 %function offspring_VEC = reproduction (population_MTX,N,k,p)
-function new_generation = reproduction (parent_VEC,Crossover_type,Crossover_rate,crossover_point,pop_size,parents_fitness,Parents_Elitism,Parents_selection_method,max_min)
-[parent_size number_of_bits] = size(parent_VEC);
+function new_generation = reproduction (parent_VEC,Crossover_type,Crossover_rate,pop_size,parents_fitness,Parents_Elitism,Parents_selection_method,max_min)
+[parent_size,number_of_bits] = size(parent_VEC);
 new_generation = zeros(pop_size,number_of_bits);
 
 if Parents_Elitism==1
@@ -36,7 +36,7 @@ while offspring_index < pop_size
         % Generate offsprings of two parents
         if Crossover_type == 'default'
             %Generate two offsprings by _one point cross over_ 
-            k=crossover_point;
+            k=round(number_of_bits*Crossover_rate);
             parta1=parent1(1:k);  
             partb1=parent1(k+1:number_of_bits);  
             parta2=parent2(1:k);   
