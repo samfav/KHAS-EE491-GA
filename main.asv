@@ -27,19 +27,18 @@ while index < maximum_iteration %stop_condition, add test on fitness
 end
 
 %PLOTTING
-
-subplot(2,1,1)
-fplot(fitness_function,[-1 1],'r')
-title('Fitness Function')
+plot(overallfitness)
+title('Fitness vs. Generation')
+legend(func2str(fitness_function))
+xlabel('x')
+ylabel('y')
+grid on
+figure
+fplot(fitness_function,[-1 1])
+legend(func2str(fitness_function))
 xlabel('x')
 ylabel('y')
 legend(func2str(fitness_function))
-grid on
-
-subplot(2,1,2)
-plot(overallfitness)
-title('Fitness vs. Generation')
 xlabel('Generation')
 ylabel('Fitness')
-legend('Overall Fitness')
-grid on
+%display_output(pop)

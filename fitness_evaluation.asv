@@ -1,6 +1,6 @@
 %Function fitness evaluation
-%inputs: pop_in=population before mutation, fitness_function
-%outputs: fitness=overall fitness value
+%inputs: pop_in=population before mutation, fitness_function=mutation probability
+%outputs: pop_out=population after mutation
 function fitness = fitness_evaluation( pop_in, fitness_function )
     [number_of_individuals,number_of_bits]=size(pop_in); % population size is N 
                                                          % bit lengths e.g.: 64
@@ -13,7 +13,7 @@ function fitness = fitness_evaluation( pop_in, fitness_function )
     %b= bi2de(pop_in(:,33:64));
     %f= a.^3 + b.^2;
     
-    fitness=reshape(fitnesstmp, number_of_individuals, 1);
+    fitness=reshape(fitnesstmp, population_size, 1);
     
 end
 

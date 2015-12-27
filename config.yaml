@@ -32,4 +32,4 @@ selection_strategy: default
 max_min: 1
 
 #fitness function
-fitness_function: x
+fitness_function: '@(x)sin(x)'
