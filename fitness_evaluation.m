@@ -17,7 +17,7 @@ function fitness = fitness_evaluation( pop_in, fitness_function )
     %z=x+3*sin(2*x)*cos(3*x)+2
     x= bi2de(pop_in(:,1:end));
     %y= bi2de(pop_in(:,33:64));
-    fitnesstmp=1./abs(x+3.*sin(2.*x).*cos(3.*x)+2);
+    fitnesstmp=1./abs(x+3.*sin(2.*x).*cos(3.*x)+3);
     
     fitness=reshape(fitnesstmp, number_of_individuals,1);
     
