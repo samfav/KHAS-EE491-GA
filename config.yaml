@@ -32,4 +32,4 @@ selection_strategy: default
 max_min: 1
 
 #fitness function
-fitness_function: '@(x)x^2'
+fitness_function: '@(x)x+3.*sin(2.*x).*cos(3.*x)+3'
