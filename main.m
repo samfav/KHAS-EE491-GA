@@ -5,6 +5,7 @@ clc;
 
 loader;
 
+%encoder might be used
 population = reshape(initial_population, population_size, number_of_bits,1);
 index = 1;
 
