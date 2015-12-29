@@ -9,7 +9,7 @@ maximum_iteration: 500
 population_size: 50
 number_of_parents: 20
 
-number_of_bits: 64
+number_of_bits: 8
 
 #Algorithm constants
 #mutation is bit flip by default
@@ -29,7 +29,7 @@ selection_strategy: default
 
 #max or min problem? max=1 min=2 
 #min not working, but it is necessary for the roulettewheelselection, as there are two different algorithms for min and max!
-max_min: 1
+max_min: 2
 
 #fitness function
 fitness_function: '@(x)x+3.*sin(2.*x).*cos(3.*x)+3'

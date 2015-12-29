@@ -27,6 +27,8 @@ while index < maximum_iteration %stop_condition, add test on fitness
    
 end
 
+solutions=fitness(:,500).*0.00000001;
+
 %PLOTTING
 
 subplot(2,1,1)
@@ -35,6 +37,8 @@ title('Fitness Function')
 xlabel('x')
 ylabel('y')
 legend(func2str(fitness_function))
+hold on
+plot(solutions,0,'x','MarkerSize',20)
 grid on
 
 subplot(2,1,2)
